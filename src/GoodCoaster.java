@@ -1,8 +1,8 @@
 public class GoodCoaster extends RollerCoaster {
-    float rating;
-    String country;
-    String manufacturer;
-    int duels;
+    private float rating;
+    private String country;
+    private String manufacturer;
+    private int duels;
 
     public float getRating() {
         return rating;
@@ -44,5 +44,10 @@ public class GoodCoaster extends RollerCoaster {
         this.duels = duels;
 
 
+
+    }
+
+    public String ToString(){
+        return name;
     }
 }
