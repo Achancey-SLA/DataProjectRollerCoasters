@@ -1,9 +1,9 @@
 import java.time.LocalDate;
 
-public class TallCoaster extends RollerCoaster {
-    boolean operating;
-    LocalDate opened;
-    Float height;
+ class TallCoaster extends RollerCoaster {
+    private boolean operating;
+    private LocalDate opened;
+    private Float height;
 
     public boolean isOperating() {
         return operating;
@@ -38,7 +38,7 @@ public class TallCoaster extends RollerCoaster {
 
         }
     public String toString() {
-return name + " the " + park + " the rank is number " + rank + " is " + operating + " the " + height + " when it open "+ opened;
+return name + " located at " + park + " the rank is number " + rank + " is " + operating + " the " + height + " when it open "+ opened;
     }
 
 }
