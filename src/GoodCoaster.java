@@ -47,7 +47,7 @@ public class GoodCoaster extends RollerCoaster {
 
     }
 
-    public String ToString(){
-        return name;
+    public String toString(){
+        return name+ " at "+park+" is ranked the #"+rank +" best coaster with a rating of " +rating;
     }
 }
