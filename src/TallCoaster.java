@@ -38,7 +38,7 @@ public class TallCoaster extends RollerCoaster {
 
         }
     public String toString() {
-return "hello";
+return name + " the " + park + " the rank is number " + rank + " is " + operating + " the " + height + " when it open "+ opened;
     }
 
 }
