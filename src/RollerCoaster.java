@@ -1,7 +1,7 @@
 public class RollerCoaster {
-    String name;
-    String park;
-    int rank;
+    protected String name;
+    protected String park;
+    protected int rank;
 
     public RollerCoaster(String name, String park, int rank) {
         this.name = name;
