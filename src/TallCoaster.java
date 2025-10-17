@@ -35,10 +35,13 @@ public class TallCoaster extends RollerCoaster {
         this.opened = opened;
         this.height = height;
 
-//public String toString() {
 
         }
-        }
-
+    public String toString() {
+return "hello";
     }
+
 }
+
+
+
