@@ -48,6 +48,6 @@ public class GoodCoaster extends RollerCoaster {
     }
 
     public String toString(){
-        return name+ " at "+park+" is ranked the #"+rank +" best coaster with a rating of " +rating;
+        return name+ " at "+park+" in "+ country +" is ranked the #"+rank +" best coaster with a rating of " +rating;
     }
 }
