@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
  class TallCoaster extends RollerCoaster {
     private boolean operating;
@@ -34,10 +35,21 @@ import java.time.LocalDate;
         this.operating = operating;
         this.opened = opened;
         this.height = height;
-
+        tallCoastersList.add(this);
 
         }
-    public String toString() {
+     static ArrayList<TallCoaster> tallCoastersList = new ArrayList<TallCoaster>();
+
+
+     static public ArrayList<TallCoaster> getTallcoastersList() {
+         return tallCoastersList;
+     }
+
+     static public void setTallcoastersList(ArrayList<TallCoaster> tallcoastersList) {
+         tallCoastersList = tallcoastersList;
+     }
+
+     public String toString() {
 return name + " located at " + park + " the rank is number " + rank + " is " + operating + " the " + height + " when it open "+ opened;
     }
 
