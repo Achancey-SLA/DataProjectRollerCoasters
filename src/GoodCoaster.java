@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class GoodCoaster extends RollerCoaster {
     private float rating;
     private String country;
@@ -43,8 +45,17 @@ public class GoodCoaster extends RollerCoaster {
         this.manufacturer = manufacturer;
         this.duels = duels;
 
+        goodCoasters.add(this);
+    }
 
+    private static ArrayList<GoodCoaster> goodCoasters = new ArrayList<>();
 
+    public static ArrayList<GoodCoaster> getGoodCoasters() {
+        return goodCoasters;
+    }
+
+    public static void setGoodCoasters(ArrayList<GoodCoaster> goodCoasters) {
+        GoodCoaster.goodCoasters = goodCoasters;
     }
 
     public String toString(){
