@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class RollerCoaster {
     protected String name;
     protected String park;
@@ -7,6 +9,16 @@ public class RollerCoaster {
         this.name = name;
         this.park = park;
         this.rank = rank;
+        coastersList.add(this);
+    }
+   private static ArrayList<RollerCoaster> coastersList = new ArrayList<RollerCoaster>();
+
+    public static ArrayList<RollerCoaster> getCoastersList() {
+        return coastersList;
+    }
+
+    public static void setCoastersList(ArrayList<RollerCoaster> coastersList) {
+        RollerCoaster.coastersList = coastersList;
     }
 
     public String getName() {
