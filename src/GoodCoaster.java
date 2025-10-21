@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GoodCoaster extends RollerCoaster {
     private float rating;
@@ -56,6 +59,38 @@ public class GoodCoaster extends RollerCoaster {
 
     public static void setGoodCoasters(ArrayList<GoodCoaster> goodCoasters) {
         GoodCoaster.goodCoasters = goodCoasters;
+    }
+
+    public static void readGoodData() throws Exception{
+        File coasterData = new File("GoodCoasterData");
+        Scanner dataScanner = new Scanner(coasterData);
+        String data = "";
+        Scanner lineScanner = new Scanner(data);
+
+
+        while(dataScanner.hasNextLine()){
+
+            data = dataScanner.nextLine();
+            String name = data;
+            data = dataScanner.nextLine();
+            int rank = lineScanner.nextInt();
+
+            System.out.println(data);
+        }
+
+        for (int i=0;i<0;i+=1){
+
+
+            int rank = 1;
+            String name = "steelVengeance";
+            String park = "Cedar Point";
+            float rating = 100;
+            String country = "United States";
+            String manufacturer = "Rocky Mountain Construction";
+            int duels = 1800;
+            new GoodCoaster(name, park, rank, rating, country, manufacturer, duels);
+        }
+
     }
 
     public String toString(){
