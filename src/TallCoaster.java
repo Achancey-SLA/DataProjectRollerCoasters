@@ -1,7 +1,9 @@
+import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
- class TallCoaster extends RollerCoaster {
+class TallCoaster extends RollerCoaster {
     private boolean operating;
     private LocalDate opened;
     private Float height;
@@ -52,6 +54,49 @@ import java.util.ArrayList;
      public String toString() {
 return name + " located at " + park + " the rank is number " + rank + " is " + operating + " the " + height + " when it open "+ opened;
     }
+
+    public static void readTallCoasterData() throws Exception{
+      File myData = new File("TallCoasterData");
+      Scanner myReader = new Scanner(myData);
+      while(myReader.hasNextLine()){
+          String data = myReader.nextLine();
+          System.out.println(data);
+
+          Scanner lineScanner = new Scanner(data);
+          lineScanner. useDelimiter("\t");
+
+         /*
+          String name = "Kingda Ka";
+          String park = "Six Flags Great Adventure";
+          int rank = 1;
+          boolean operating = false;
+          float height = 456F;
+          LocalDate tallCoatserLocalDate = LocalDate.of(2005, 5,21);
+          */
+          String name = lineScanner.nextLine();
+          String park = lineScanner.nextLine();
+          int rank = lineScanner.nextInt();
+          boolean operating = lineScanner.hasNextBoolean();
+          int year = lineScanner.nextInt();
+          LocalDate tallCoatserLocalDate = LocalDate.of(2005, 5,21);
+
+
+          String heightChunk = lineScanner.next();
+          heightChunk = heightChunk.replace("ft","");
+
+          float height = Float.parseFloat(heightChunk);
+
+          height = 456F;
+
+          new TallCoaster(name, park, rank, operating, tallCoatserLocalDate, height);
+
+          //new TallCoaster("Kingda Ka", "Six Flags Great Adventure", 1, false, LocalDate.of(2005, 5, 21), 456f);
+          //System.out.println(coaster1);
+      }
+
+
+    }
+
 
 }
 
