@@ -72,27 +72,35 @@ public class GoodCoaster extends RollerCoaster {
 
             data = dataScanner.nextLine();
             String name = data;
+
             data = dataScanner.nextLine();
 
             int rankEnds = data.indexOf(" ");
+            int rank = Integer.parseInt(data.substring(0,rankEnds+1));
 
-            System.out.println(rankEnds);
+            System.out.println(rank);
 
-            System.out.println(data);
+            data = dataScanner.nextLine();
+            String park =data;
+            data = dataScanner.nextLine();
+            String country = data;
+            data = dataScanner.nextLine();
+            String manufacturer = data;
+            data = dataScanner.nextLine();
+            String ratingString = data;
+            ratingString = ratingString.replace(",",".");
+            ratingString = ratingString.replace("%","");
+            float rating = Float.parseFloat(ratingString);
+            data = dataScanner.nextLine();
+            data = data.replace(",","");
+            data = data.replace(" duels","");
+            int duels = Integer.parseInt(data);
+
+
         }
 
-        for (int i=0;i<0;i+=1){
+        System.out.println(goodCoasters);
 
-
-            int rank = 1;
-            String name = "steelVengeance";
-            String park = "Cedar Point";
-            float rating = 100;
-            String country = "United States";
-            String manufacturer = "Rocky Mountain Construction";
-            int duels = 1800;
-            new GoodCoaster(name, park, rank, rating, country, manufacturer, duels);
-        }
 
     }
 
