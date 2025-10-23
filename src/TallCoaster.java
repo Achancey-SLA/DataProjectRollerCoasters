@@ -58,9 +58,12 @@ return name + " located at " + park + " the rank is number " + rank + " is " + o
     public static void readTallCoasterData() throws Exception{
       File myData = new File("TallCoasterData");
       Scanner myReader = new Scanner(myData);
-      while(myReader.hasNextLine()){
+      int currentRank = 1;
+      while (myReader.hasNextLine()){
           String data = myReader.nextLine();
           System.out.println(data);
+
+          //Kingda Ka	Six Flags Great Adventure	Steel	Sit Down	-	5/21/2005	456.0 ft
 
           Scanner lineScanner = new Scanner(data);
           lineScanner. useDelimiter("\t");
@@ -73,12 +76,13 @@ return name + " located at " + park + " the rank is number " + rank + " is " + o
           float height = 456F;
           LocalDate tallCoatserLocalDate = LocalDate.of(2005, 5,21);
           */
-          String name = lineScanner.nextLine();
-          String park = lineScanner.nextLine();
-          int rank = lineScanner.nextInt();
+          String name = lineScanner.next();
+          String park = lineScanner.next();
+          int rank = currentRank;
+          currentRank+=1;
           boolean operating = lineScanner.hasNextBoolean();
           int year = lineScanner.nextInt();
-          LocalDate tallCoatserLocalDate = LocalDate.of(2005, 5,21);
+          LocalDate tallCoatserLocalDate = LocalDate.of(year, 1,1);
 
 
           String heightChunk = lineScanner.next();
