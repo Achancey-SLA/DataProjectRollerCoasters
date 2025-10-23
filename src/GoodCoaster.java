@@ -73,7 +73,10 @@ public class GoodCoaster extends RollerCoaster {
             data = dataScanner.nextLine();
             String name = data;
             data = dataScanner.nextLine();
-            int rank = lineScanner.nextInt();
+
+            int rankEnds = data.indexOf(" ");
+
+            System.out.println(rankEnds);
 
             System.out.println(data);
         }
