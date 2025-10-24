@@ -61,7 +61,7 @@ return name + " located at " + park + " the rank is number " + rank + " is " + o
       int currentRank = 1;
       while (myReader.hasNextLine()){
           String data = myReader.nextLine();
-          System.out.println(data);
+          System.out.println("data:"+data);
 
           //Kingda Ka	Six Flags Great Adventure	Steel	Sit Down	-	5/21/2005	456.0 ft
 
@@ -77,21 +77,51 @@ return name + " located at " + park + " the rank is number " + rank + " is " + o
           LocalDate tallCoatserLocalDate = LocalDate.of(2005, 5,21);
           */
           String name = lineScanner.next();
+          System.out.println("name:"+name);
           String park = lineScanner.next();
+
+          System.out.println("park:"+park);
           int rank = currentRank;
           currentRank+=1;
-          boolean operating = lineScanner.hasNextBoolean();
-          int year = lineScanner.nextInt();
-          LocalDate tallCoatserLocalDate = LocalDate.of(year, 1,1);
+
+          lineScanner.next();
+          lineScanner.next();
+
+          String operatingString = lineScanner.next();
+          boolean operating;
+          if(operatingString.equals("-")||operatingString.equals("SBNO")||operatingString.equals("Under Constrution")) {
+              operating = false;
+
+          }
+          else{
+              operating = true;
+          }
+          System.out.print("operation"+operating);
+
+          String dateString = lineScanner.next();
+          int year = 0;
+          int month = 1;
+          int dayOfMonth = 1;
+          if (dateString.contains("/")){
+              int cutOffPoint = dateString.indexOf("/");
+              month = Integer.parseInt(dateString.substring(0,cutOffPoint));
+              dateString=dateString.substring(cutOffPoint+1);
+              cutOffPoint = dateString.indexOf("/");
+              dayOfMonth = Integer.parseInt(dateString.substring(0,cutOffPoint));
+              dateString=dateString.substring(cutOffPoint+1);
+              year = Integer.parseInt(dateString);
+          }
+          else{
+              year = Integer.parseInt(dateString);
+          }
+
+
+          LocalDate tallCoatserLocalDate = LocalDate.of(year, month,dayOfMonth);
 
 
           String heightChunk = lineScanner.next();
           heightChunk = heightChunk.replace("ft","");
-
           float height = Float.parseFloat(heightChunk);
-
-          height = 456F;
-
           new TallCoaster(name, park, rank, operating, tallCoatserLocalDate, height);
 
           //new TallCoaster("Kingda Ka", "Six Flags Great Adventure", 1, false, LocalDate.of(2005, 5, 21), 456f);
