@@ -61,7 +61,7 @@ return name + " located at " + park + " the rank is number " + rank + " is " + o
       int currentRank = 1;
       while (myReader.hasNextLine()){
           String data = myReader.nextLine();
-          System.out.println("data:"+data);
+
 
           //Kingda Ka	Six Flags Great Adventure	Steel	Sit Down	-	5/21/2005	456.0 ft
 
@@ -77,10 +77,9 @@ return name + " located at " + park + " the rank is number " + rank + " is " + o
           LocalDate tallCoatserLocalDate = LocalDate.of(2005, 5,21);
           */
           String name = lineScanner.next();
-          System.out.println("name:"+name);
+
           String park = lineScanner.next();
 
-          System.out.println("park:"+park);
           int rank = currentRank;
           currentRank+=1;
 
@@ -96,7 +95,7 @@ return name + " located at " + park + " the rank is number " + rank + " is " + o
           else{
               operating = true;
           }
-          System.out.print("operation"+operating);
+
 
           String dateString = lineScanner.next();
           int year = 0;
