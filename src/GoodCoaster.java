@@ -76,10 +76,7 @@ public class GoodCoaster extends RollerCoaster {
             data = dataScanner.nextLine();
 
             int rankEnds = data.indexOf(" ");
-            int rank = Integer.parseInt(data.substring(0,rankEnds+1));
-
-            System.out.println(rank);
-
+            int rank = Integer.parseInt((data.substring(0,rankEnds+1)).trim());
             data = dataScanner.nextLine();
             String park =data;
             data = dataScanner.nextLine();
@@ -96,15 +93,14 @@ public class GoodCoaster extends RollerCoaster {
             data = data.replace(" duels","");
             int duels = Integer.parseInt(data);
 
-
+            new GoodCoaster(name,park,rank,rating,country,manufacturer,duels);
         }
 
-        System.out.println(goodCoasters);
 
 
     }
 
     public String toString(){
-        return name+ " at "+park+" in "+ country +" is ranked the #"+rank +" best coaster with a rating of " +rating;
+        return name+ " at "+park+" in "+ country +" is ranked the #"+rank +" best coaster with a rating of " +rating + " after " +duels+" duels." ;
     }
 }
